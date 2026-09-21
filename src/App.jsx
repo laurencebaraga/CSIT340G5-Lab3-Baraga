@@ -3,15 +3,15 @@ const Header = (props) => {
 }
 
 const Part = (props) => {
-  return <p>{props.name} {props.units}</p>
+  return <p>{props.part.name} {props.part.units}</p>
 }
 
 const Content = (props) => {
   return (
     <div>
-      <Part name={props.part1} units={props.units1} />
-      <Part name={props.part2} units={props.units2} />
-      <Part name={props.part3} units={props.units3} />
+      <Part part={props.part1} />
+      <Part part={props.part2} />
+      <Part part={props.part3} />
     </div>
   )
 }
@@ -26,12 +26,9 @@ const Footer = (props) => {
 
 const App = () => {
   const course = 'BSIT'
-  const part1 = 'CSIT340 Industry Elective'
-  const units1 = 3
-  const part2 = 'ES038 Technopreneurship'
-  const units2 = 3
-  const part3 = 'IT317 Project Management for IT'
-  const units3 = 3
+  const part1 = { name: 'CSIT340 Industry Elective', units: 3 }
+  const part2 = { name: 'ES038 Technopreneurship', units: 3 }
+  const part3 = { name: 'IT317 Project Management for IT', units: 3 }
 
   return (
     <div>
