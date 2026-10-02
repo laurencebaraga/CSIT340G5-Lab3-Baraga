@@ -26,19 +26,20 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'BSIT'
-
-  const parts = [
+  const course = {
+    name: 'BSIT',
+    parts: [
   { name: 'CSIT340 Industry Elective', units: 3 },
   { name: 'ES038 Technopreneurship', units: 3 },
   { name: 'IT317 Project Management for IT', units: 3 }
 ]
+  }
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer name="Laurence Andrey M. Baraga" code="CSIT340" section="G5" />
     </div>
   )
