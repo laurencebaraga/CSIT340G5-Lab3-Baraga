@@ -9,15 +9,16 @@ const Part = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <Part part={props.part1} />
-      <Part part={props.part2} />
-      <Part part={props.part3} />
+      <Part part={props.parts[0]} />
+      <Part part={props.parts[1]} />
+      <Part part={props.parts[2]} />
     </div>
   )
 }
 
 const Total = (props) => {
-  return <p>Total units: {props.total}</p>
+  const total = props.parts[0].units + props.parts[1].units + props.parts[2].units
+  return <p>Total units: {total}</p>
 }
 
 const Footer = (props) => {
@@ -26,19 +27,18 @@ const Footer = (props) => {
 
 const App = () => {
   const course = 'BSIT'
-  const part1 = { name: 'CSIT340 Industry Elective', units: 3 }
-  const part2 = { name: 'ES038 Technopreneurship', units: 3 }
-  const part3 = { name: 'IT317 Project Management for IT', units: 3 }
+
+  const parts = [
+  { name: 'CSIT340 Industry Elective', units: 3 },
+  { name: 'ES038 Technopreneurship', units: 3 },
+  { name: 'IT317 Project Management for IT', units: 3 }
+]
 
   return (
     <div>
       <Header course={course} />
-      <Content
-        part1={part1} units1={units1}
-        part2={part2} units2={units2}
-        part3={part3} units3={units3}
-      />
-      <Total total={units1 + units2 + units3} />
+      <Content parts={parts} />
+      <Total parts={parts} />
       <Footer name="Laurence Andrey M. Baraga" code="CSIT340" section="G5" />
     </div>
   )
